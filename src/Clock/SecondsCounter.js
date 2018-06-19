@@ -16,13 +16,13 @@ class SecondsCounter extends Component {
   getMessage() {
     let result = '';
      if(this.state.secondsCounter === 30){
-      result =  <h1> Please wait... these tests can take few moments to complete.</h1>;
+      result =  <h1 style={{color:'orange'}}> Please wait... these tests can take few moments to complete.</h1>;
     }
     if(this.state.secondsCounter === 60){
-      result = <h1> Our diagnostic test help 90% of people resolve their issues online.</h1>;
+      result = <h1 style={{color:'white'}}> Our diagnostic test help 90% of people resolve their issues online.</h1>;
     }
     if(this.state.secondsCounter === 90){
-      result = <h1> We are almost done... hang in there!</h1>;
+      result = <h1 style={{color:'green'}}> We are almost done... hang in there!</h1>;
     }
       return result;
   }

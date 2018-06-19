@@ -15,7 +15,8 @@ class App extends Component {
       {id: '400', name: 'Neymar', age:26, country: 'Brazil'}
     ],
     otherState: 'some other value',
-    showPersons: false
+    showPersons: false,
+    showCode: false
   }
 
   nameChangedHandler = (event, id) => {
@@ -54,6 +55,13 @@ class App extends Component {
       });
     }
 
+    showCodeHandler = () => {
+      const doesShow = this.state.showCode;
+      this.setState({
+        showCode: !doesShow
+      });
+    }
+
   render() {
 
     let persons = null;
@@ -77,6 +85,27 @@ class App extends Component {
         btnClass = classes.Red;
     }
 
+    if(this.state.showCode){
+      persons = (
+        <div> 
+            {this.state.persons.map((person, index) => {
+             return <ErrorBoundary key = {person.id}> <Person 
+                  click = {() => this.deletePersonHandler(index)}
+                  name = {person.name}
+                  age = {person.age} 
+                  country ={person.country}
+                  changed = {(event) => this.nameChangedHandler(event, person.id)}/>
+                  </ErrorBoundary>
+            })
+            }
+            </div>
+        );
+        btnClass = classes.Red;
+    }
+
+
+
+
     const assignedClasses = [];
     if(this.state.persons.length <=2){
       assignedClasses.push(classes.red);
@@ -92,6 +121,7 @@ class App extends Component {
           <h1>Hi, I'm a rect App</h1>
           <SecondsCounter></SecondsCounter>
           <Clock></Clock>
+
           <p className={assignedClasses.join(' ')}>This is really working!!</p>
           <button className={btnClass} onClick={this.togglePersosnsHandler}>Toggle persons</button>
           {persons}
