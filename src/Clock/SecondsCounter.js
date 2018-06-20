@@ -9,7 +9,7 @@ class SecondsCounter extends Component {
 
   _increase() {
     this.setState({ secondsCounter: this.state.secondsCounter + 30 });
-    //1000 - 1 second  30000 - 30 seconds
+    //1000 - 1 second  30,000 - 30 seconds
     setTimeout(this._increase.bind(this), 30000);
   }
 
@@ -25,6 +25,7 @@ class SecondsCounter extends Component {
       result = <h1 style={{color:'green'}}> We are almost done... hang in there!</h1>;
     }
       return result;
+    
   }
 
   render() {
