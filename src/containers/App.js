@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 
-import Person from './Person/Person';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
-import Clock from './Clock/Clock';
-import SecondsCounter from './Clock/SecondsCounter';
+import Person from './../components/Persons/Person/Person';
+import ErrorBoundary from './../components/ErrorBoundary/ErrorBoundary';
+import Clock from './../components/Clock/Clock';
+import SecondsCounter from './../components/Clock/SecondsCounter';
 
 class App extends Component {
   state = {
@@ -118,11 +118,12 @@ class App extends Component {
     return (
       
         <div className={classes.App}>
-          <h1>Hi, I'm a rect App</h1>
+          <h1>Hi, I'm a react App</h1>
           <SecondsCounter></SecondsCounter>
           <Clock></Clock>
 
           <p className={assignedClasses.join(' ')}>This is really working!!</p>
+          <p>for any feedback--> dhana.sai@gmail.com</p>
           <button className={btnClass} onClick={this.togglePersosnsHandler}>Toggle persons</button>
           {persons}
         </div>
